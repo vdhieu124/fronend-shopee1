@@ -9,14 +9,16 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
     <link rel="stylesheet" href="./assets/css/base.css">
     <link rel="stylesheet" href="./assets/css/main.css">
+    <link rel="stylesheet" href="./assets/css/grid.css">
+    <link rel="stylesheet" href="./assets/css/responsive.css">
     <link rel="stylesheet" href="./assets/fonts/fontawesome-free-5.15.3-web/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="app">
         <header class="header">
-            <div class="grid">
-                <nav class="header__navbar">
+            <div class="grid wide">
+                <nav class="header__navbar hide-on-mobile-tablet">
                     <ul class="header__navbar-list">
                         <li class="header__navbar-item header__navbar-item--separate">Kênh V.D.Hiếu</li>
                         <li class="header__navbar-item header__navbar-item--separate">Trở thành Người bán Shopee</li>
@@ -141,7 +143,37 @@
 
                 <!--Header with search-->
                 <div class="header-with-search">
-                    <div class="header__logo">
+                    <div class="mobile-search-and-menu">
+                        <label for="mobile-menu-checkbox" class="header__mobile-menu">
+                            <i class="header__mobile-menu-icon fas fa-bars"></i>
+                        </label>
+                        <label for="mobile-search-checkbox" class="header__mobile-search">
+                            <i class="header__mobile-search-icon fas fa-search"></i>
+                        </label>
+                    </div>
+
+                    <input type="checkbox" hidden id="mobile-menu-checkbox" class="header__menu-checkbox">
+                    <div class="menu-mobile">
+                        <label for="mobile-menu-checkbox" class="menu-mobile__close">
+                            <i class="menu-mobile__icon-close fas fa-times"></i>
+                        </label>
+                        <ul class="menu-mobile__list">
+                            <li class="menu-mobile__list-item">
+                                <a href="#" class="menu-mobile__list-item-link">Trang chủ</a>
+                            </li>
+                            <li class="menu-mobile__list-item">
+                                <a href="#" class="menu-mobile__list-item-link">Đăng nhập</a>
+                            </li>
+                            <li class="menu-mobile__list-item">
+                                <a href="#" class="menu-mobile__list-item-link">Đăng ký</a>
+                            </li>
+                            <li class="menu-mobile__list-item">
+                                <a href="#" class="menu-mobile__list-item-link">Cài đặt</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="header__logo hide-on-tablet">
                         <a href="/" class="header__logo-link">
                             <svg viewBox="0 0 192 65" class="header__logo-img">
                                 <g fill-rule="evenodd">
@@ -151,6 +183,8 @@
                             </svg>
                         </a>
                     </div>
+
+                    <input type="checkbox" hidden id="mobile-search-checkbox" class="header__search-checkbox">
 
                     <div class="header__search">
                         <div class="header__search-input-wrap">
@@ -259,13 +293,27 @@
                     </div>
                 </div>
             </div>
+            <ul class="header__sort-bar">
+                <li class="header__sort-item">
+                    <a href="" class="sort-link">Liên quan</a>
+                </li>
+                <li class="header__sort-item header__sort-item--active">
+                    <a href="" class="sort-link">Mới nhất</a>
+                </li>
+                <li class="header__sort-item">
+                    <a href="" class="sort-link">Bán chạy</a>
+                </li>
+                <li class="header__sort-item">
+                    <a href="" class="sort-link">Giá</a>
+                </li>
+            </ul>
         </header>
 
         <!-- App container -->
         <div class="container">
-            <div class="grid">
-                <div class="grid__row app__content">
-                    <div class="grid__column-2">
+            <div class="grid wide">
+                <div class="row sm-gutter app__content">
+                    <div class="col l-2 m-0 c-0">
                         <nav class="category">
                             <h3 class="category-heading">
                                 <i class="category-heading-icon fas fa-list"></i>
@@ -298,8 +346,8 @@
                         </nav>
                     </div>
     
-                    <div class="grid__column-10">
-                        <div class="home-filter">
+                    <div class="col l-10 m-12 c-12">
+                        <div class="home-filter hide-on-mobile-tablet">
                             <span class="home-filter__label">Sắp xếp theo</span>
                             <button class="home-filter__btn btn">Phổ biến</button>
                             <button class="home-filter__btn btn btn--primary">Mới nhất</button>
@@ -335,10 +383,51 @@
                             </div>
                         </div>
 
+                        <nav class="mobile-category">
+                            <ul class="mobile-category__list">
+                                <li class="mobile-category__item">
+                                    <a href="#" class="mobile-category__link">Dụng cụ & Thiết bị tiện ích</a>
+                                </li>
+                                <li class="mobile-category__item">
+                                    <a href="#" class="mobile-category__link">Dụng cụ & Thiết bị tiện ích</a>
+                                </li>
+                                <li class="mobile-category__item">
+                                    <a href="#" class="mobile-category__link">Dụng cụ & Thiết bị tiện ích</a>
+                                </li>
+                                <li class="mobile-category__item">
+                                    <a href="#" class="mobile-category__link">Dụng cụ & Thiết bị tiện ích</a>
+                                </li>
+                                <li class="mobile-category__item">
+                                    <a href="#" class="mobile-category__link">Dụng cụ & Thiết bị tiện ích</a>
+                                </li>
+                                <li class="mobile-category__item">
+                                    <a href="#" class="mobile-category__link">Dụng cụ & Thiết bị tiện ích</a>
+                                </li>
+                                <li class="mobile-category__item">
+                                    <a href="#" class="mobile-category__link">Dụng cụ & Thiết bị tiện ích</a>
+                                </li>
+                                <li class="mobile-category__item">
+                                    <a href="#" class="mobile-category__link">Dụng cụ & Thiết bị tiện ích</a>
+                                </li>
+                                <li class="mobile-category__item">
+                                    <a href="#" class="mobile-category__link">Dụng cụ & Thiết bị tiện ích</a>
+                                </li>
+                                <li class="mobile-category__item">
+                                    <a href="#" class="mobile-category__link">Dụng cụ & Thiết bị tiện ích</a>
+                                </li>
+                                <li class="mobile-category__item">
+                                    <a href="#" class="mobile-category__link">Dụng cụ & Thiết bị tiện ích</a>
+                                </li>
+                                <li class="mobile-category__item">
+                                    <a href="#" class="mobile-category__link">Dụng cụ & Thiết bị tiện ích</a>
+                                </li>
+                            </ul>
+                        </nav>
+
                         <div class="home-product">
-                            <div class="grid__row">
+                            <div class="row sm-gutter">
                                 <!-- product item -->
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <a class="home-product-item" href="#">
                                         <div class="home-product-item__img" style="background-image: url(https://amuasa.com/wp-content/uploads/2020/12/nuoc-tay-trang-loreal.jpg);"></div>
                                         <h4 class="home-product-item__name">Nước tẩy trang Loreal [Coco Shop] - L'Oreal Paris 3-in-1 Micellar Water</h4>
@@ -374,7 +463,7 @@
                                         </div>
                                     </a>
                                 </div>     
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <a class="home-product-item" href="#">
                                         <div class="home-product-item__img" style="background-image: url(https://cf.shopee.vn/file/4dec249a49f831d852b7180ac1b4b144);"></div>
                                         <h4 class="home-product-item__name">Bông tẩy trang Ohui chuyên dùng trong các SPA cao cấp của O HUI - mỹ phẩm Ohui công ty chính hãng cao cấp Hàn Quốc</h4>
@@ -410,7 +499,7 @@
                                         </div>
                                     </a>
                                 </div>  
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <a class="home-product-item" href="#">
                                         <div class="home-product-item__img" style="background-image: url(https://vn-test-11.slatic.net/p/07aa47985b16f3c66becce63fce6c487.jpg);"></div>
                                         <h4 class="home-product-item__name">Nước hoa hồng La Roche Posay Pháp 200ml</h4>
@@ -446,7 +535,7 @@
                                         </div>
                                     </a>
                                 </div>  
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <a class="home-product-item" href="#">
                                         <div class="home-product-item__img" style="background-image: url(https://bizweb.dktcdn.net/100/342/020/files/tinh-chat-tri-tham-mun-the-ordinary-niacinamide-10-zinc-1-jpg-4.jpg?v=1621268716789);"></div>
                                         <h4 class="home-product-item__name">[GIÁ SỐC] Tinh chất Niacinamide 10% + Zinc 1% - The Ordinary</h4>
@@ -482,7 +571,7 @@
                                         </div>
                                     </a>
                                 </div>    
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <a class="home-product-item" href="#">
                                         <div class="home-product-item__img" style="background-image: url(https://cf.shopee.vn/file/d82bd2da574c4e44532d3986f10ec49d);"></div>
                                         <h4 class="home-product-item__name">FREESHIP - Kem Chống Nắng Vichy Emusion Ideal Soleil SPF50 Mattifying Face Fluid Dry Touch Ver 2021</h4>
@@ -518,7 +607,7 @@
                                         </div>
                                     </a>
                                 </div>  
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <a class="home-product-item" href="#">
                                         <div class="home-product-item__img" style="background-image: url(https://www.xtmobile.vn/vnt_upload/product/08_2019/thumbs/600_note10_trang_800x800_min.jpg);"></div>
                                         <h4 class="home-product-item__name">Điện thoại Samsung Galaxy Note 10+ 256GB</h4>
@@ -554,7 +643,7 @@
                                         </div>
                                     </a>
                                 </div>  
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <a class="home-product-item" href="#">
                                         <div class="home-product-item__img" style="background-image: url(https://cf.shopee.vn/file/2fef146945875ad82cb7013bf68ad3e1);"></div>
                                         <h4 class="home-product-item__name">Tai Nghe Bluetooth True Wireless Samsung Galaxy Buds Live - Hàng Chính Hãng</h4>
@@ -590,7 +679,7 @@
                                         </div>
                                     </a>
                                 </div>  
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <a class="home-product-item" href="#">
                                         <div class="home-product-item__img" style="background-image: url(https://cdn.tgdd.vn/Products/Images/42/213033/iphone-12-pro-max-trang-bac-600x600-200x200.jpg);"></div>
                                         <h4 class="home-product-item__name">Apple iPhone 12 Pro Max 128GB</h4>
@@ -626,7 +715,7 @@
                                         </div>
                                     </a>
                                 </div> 
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <a class="home-product-item" href="#">
                                         <div class="home-product-item__img" style="background-image: url(https://salt.tikicdn.com/cache/w444/ts/product/90/c1/c8/5dd3cb13601f8a2d1ede1c6af5a18862.jpg);"></div>
                                         <h4 class="home-product-item__name">Apple MacBook Pro (2020) M1 Chip, 13 inch, 8GB, 256GB SSD</h4>
@@ -662,7 +751,7 @@
                                         </div>
                                     </a>
                                 </div>    
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <a class="home-product-item" href="#">
                                         <div class="home-product-item__img" style="background-image: url(https://bizweb.dktcdn.net/100/305/872/products/laptop-dell-xps-13-9300-8.jpg?v=1594356961877);"></div>
                                         <h4 class="home-product-item__name">Dell Xps 15 9500 Gen 10th Core i7 10750H / RAM 16GB / SSD 256GB / GTX 1650Ti / FHD</h4>
@@ -698,7 +787,7 @@
                                         </div>
                                     </a>
                                 </div>  
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <a class="home-product-item" href="#">
                                         <div class="home-product-item__img" style="background-image: url(https://www.dangquangwatch.vn/upload/product/1574847530_donghothoitrang10.jpg);"></div>
                                         <h4 class="home-product-item__name">Đồng hồ Diamond D DM36505IG</h4>
@@ -734,7 +823,7 @@
                                         </div>
                                     </a>
                                 </div>
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <a class="home-product-item" href="#">
                                         <div class="home-product-item__img" style="background-image: url(https://www.dangquangwatch.vn/upload/img_big/1594965360_dmvd.jpg);"></div>
                                         <h4 class="home-product-item__name">Đồng hồ Diamond D DM3645B5IG-R</h4>
@@ -770,7 +859,7 @@
                                         </div>
                                     </a>
                                 </div>  
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <a class="home-product-item" href="#">
                                         <div class="home-product-item__img" style="background-image: url(https://www.dangquangwatch.vn/upload/product/282562145_dong-ho-nhap-khau11.jpg);"></div>
                                         <h4 class="home-product-item__name">Đồng hồ Philippe Auguste PA5002E</h4>
@@ -806,7 +895,7 @@
                                         </div>
                                     </a>
                                 </div>
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <a class="home-product-item" href="#">
                                         <div class="home-product-item__img" style="background-image: url(https://www.dangquangwatch.vn/upload/product/1168850159_donghothuysy61.jpg);"></div>
                                         <h4 class="home-product-item__name">Đồng hồ Atlantic Swiss AT-52780.41.61</h4>
@@ -842,7 +931,7 @@
                                         </div>
                                     </a>
                                 </div>  
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <a class="home-product-item" href="#">
                                         <div class="home-product-item__img" style="background-image: url(https://www.dangquangwatch.vn//upload/product/1399956096_donghonhapkhau50.jpg);"></div>
                                         <h4 class="home-product-item__name">ĐỒNG HỒ JACQUES LEMANS JL-1-1654.2ZG</h4>
@@ -878,7 +967,7 @@
                                         </div>
                                     </a>
                                 </div>  
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <a class="home-product-item" href="#">
                                         <div class="home-product-item__img" style="background-image: url(./assets/img/sp16.jpg);"></div>
                                         <h4 class="home-product-item__name">Audi A7 45 TFSI Sportback 2021</h4>
@@ -914,7 +1003,7 @@
                                         </div>
                                     </a>
                                 </div> 
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <a class="home-product-item" href="#">
                                         <div class="home-product-item__img" style="background-image: url(./assets/img/sp17.jpg);"></div>
                                         <h4 class="home-product-item__name">Mazda 3 Hatchback 2020 2.0 Luxury</h4>
@@ -950,7 +1039,7 @@
                                         </div>
                                     </a>
                                 </div> 
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <a class="home-product-item" href="#">
                                         <div class="home-product-item__img" style="background-image: url(./assets/img/sp18.jpg);"></div>
                                         <h4 class="home-product-item__name">Mercedes C300 AMG 2020</h4>
@@ -986,7 +1075,7 @@
                                         </div>
                                     </a>
                                 </div>    
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <a class="home-product-item" href="#">
                                         <div class="home-product-item__img" style="background-image: url(./assets/img/sp19.jpg);"></div>
                                         <h4 class="home-product-item__name">Toyota Camry 2.5Q 2020</h4>
@@ -1022,7 +1111,7 @@
                                         </div>
                                     </a>
                                 </div> 
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <a class="home-product-item" href="#">
                                         <div class="home-product-item__img" style="background-image: url(./assets/img/sp20.jpg);"></div>
                                         <h4 class="home-product-item__name">Hyundai Elantra 1.6 Turbo 2020</h4>
@@ -1101,9 +1190,9 @@
         </div>
 
         <footer class="footer">
-            <div class="grid">
-                <div class="grid__row">
-                    <div class="grid__column-2-4">
+            <div class="grid wide footer__mobile-content">
+                <div class="row">
+                    <div class="col l-2-4 m-4 c-6">
                         <h3 class="footer__heading">Chăm sóc khách hàng</h3>
                         <ul class="footer-list">
                             <li class="footer-item">
@@ -1129,7 +1218,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="grid__column-2-4">
+                    <div class="col l-2-4 m-4 c-6">
                         <h3 class="footer__heading">Giới thiệu Shopee</h3>
                         <ul class="footer-list">
                             <li class="footer-item">
@@ -1146,7 +1235,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="grid__column-2-4">
+                    <div class="col l-2-4 m-4 c-6">
                         <h3 class="footer__heading">Về kênh V.D.Hiếu</h3>
                         <ul class="footer-list">
                             <li class="footer-item">
@@ -1160,7 +1249,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="grid__column-2-4">
+                    <div class="col l-2-4 m-4 c-6">
                         <h3 class="footer__heading">Theo dõi</h3>
                         <ul class="footer-list">
                             <li class="footer-item">
@@ -1183,7 +1272,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="grid__column-2-4">
+                    <div class="col l-2-4 m-4 c-12">
                         <h3 class="footer__heading">Vào cửa hàng trên ứng dụng</h3>
                         <div class="footer-down">
                             <img src="./assets/img/qr_code.png" alt="QR Download" class="footer-down__qr">
@@ -1201,7 +1290,7 @@
             </div> 
             
              <div class="footer-bottom">
-                <div class="grid">
+                <div class="grid wide">
                     <p class="footer__copyright">© 2021 - Bản quyền thuộc về Vương Duy Hiếu</p>
                 </div>
             </div>
